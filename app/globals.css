@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --header-h: 64px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-50 text-slate-800 antialiased;
+  font-feature-settings: "cv02", "cv03", "cv04";
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+/* ------------------------------------------------------------------ */
+/* Print styles — receipts & reports                                    */
+/* ------------------------------------------------------------------ */
+@media print {
+  body {
+    background: #fff !important;
+  }
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+  .print-area {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+}
+
+/* Naira-safe tabular figures in tables */
+td.num,
+th.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle fade-in for modals */
+@keyframes sfgs-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-fade-in {
+  animation: sfgs-fade-in 0.16s ease-out;
+}
+
+@keyframes sfgs-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-slide-in {
+  animation: sfgs-slide-in 0.18s ease-out;
+}

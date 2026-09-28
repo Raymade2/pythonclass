@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+build/
+*.log
+.DS_Store
+next-env.d.ts
+
+# Local database
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+
+# Environment files may contain secrets in real deployments.
+# .env is committed here for demo reproducibility (contains no real secrets).
